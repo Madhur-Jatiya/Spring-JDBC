@@ -1,2 +1,2 @@
 # spring-jdbc
-NucleusTeq Tranning Project
+NucleusTeq training Project
