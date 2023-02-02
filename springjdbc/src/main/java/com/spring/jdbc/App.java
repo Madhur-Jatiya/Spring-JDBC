@@ -17,7 +17,7 @@ public class App
         
         String query = "insert into student(id, name, city) values(?,?,?)";
         
-        int result = template.update(query,7,"Suraj", "Jaipur");
+        int result = template.update(query,8,"Nirmal", "Indore");
         System.out.println("Insert Successfully" + result);
     }
 }
