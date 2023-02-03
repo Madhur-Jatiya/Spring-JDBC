@@ -28,9 +28,10 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	public Student getStudent(int studentId) {
-		String query = "select * student where id = ?";
-		int r = template.queryForObject(query,rowMapper, studentId);
-		return r;
+		String query = "select * from student where id = ?";
+		RowMapper<Student> rowMapper = new RowMapperImpl();
+		Student student = template.queryForObject(query,rowMapper, studentId);
+		return student;
 	}
 	
 	public JdbcTemplate getTemplate() {

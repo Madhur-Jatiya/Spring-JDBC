@@ -34,10 +34,13 @@ public class App {
 
 		// delete
 
-		System.out.print("Enter id = ");
-		int id = sc.nextInt();
-		int result = studentDao.delete(id);
+//		System.out.print("Enter id = ");
+//		int id = sc.nextInt();
+//		int result = studentDao.delete(id);
 
-		System.out.println("delete Successfully" + result);
+		//get Result
+		Student student = studentDao.getStudent(7);
+		
+		System.out.println(student);
 	}
 }
