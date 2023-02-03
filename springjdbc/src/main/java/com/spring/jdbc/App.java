@@ -1,23 +1,43 @@
 package com.spring.jdbc;
 
+import java.util.Scanner;
+
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
+import com.spring.jdbc.dao.StudentDao;
+import com.spring.jdbc.entities.Student;
 
 /**
  * Hello world!
  *
  */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
-        JdbcTemplate template = (JdbcTemplate) context.getBean("jdbcproject");
-        
-        String query = "insert into student(id, name, city) values(?,?,?)";
-        
-        int result = template.update(query,8,"Nirmal", "Indore");
-        System.out.println("Insert Successfully" + result);
-    }
+public class App {
+	public static void main(String[] args) {
+		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
+		Scanner sc = new Scanner(System.in);
+		
+		// insert
+
+//        Student student = new Student();
+//        student.setId(110);
+//        student.setName("Akshu");
+//        student.setCity("Sangli");
+//        int result = studentDao.insert(student);
+
+		// update
+
+//        Student student2 = new Student();
+//        student2.setId(100);
+//        student2.setName("Akshada");
+//        int result = studentDao.change(student2);
+
+		// delete
+
+		System.out.print("Enter id = ");
+		int id = sc.nextInt();
+		int result = studentDao.delete(id);
+
+		System.out.println("delete Successfully" + result);
+	}
 }

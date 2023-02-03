@@ -20,4 +20,8 @@
 		<property name="dataSource" ref="ds"/>
 	</bean>
 	
+	<bean class="com.spring.jdbc.dao.StudentDaoImpl" name="studentDao">
+		<property name="template" ref="jdbcproject"/>
+	</bean>
+	
 	</beans>
