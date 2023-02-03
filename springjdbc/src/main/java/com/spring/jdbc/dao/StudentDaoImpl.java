@@ -1,5 +1,7 @@
 package com.spring.jdbc.dao;
 
+import java.util.List;
+
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 
@@ -16,11 +18,12 @@ public class StudentDaoImpl implements StudentDao {
 	}
 
 	public int change(Student student) {
-		String query = "update student set name = ? where id = ?";
-		int r = template.update(query,student.getName(), student.getId());
+		String query = "update student set id = ? where name = ?";
+//		int r = template.update(query, student.getName(), student.getId());
+		int r = template.update(query, student.getId(), student.getName());
 		return r;
 	}
-	
+
 	public int delete(int studentId) {
 		String query = "delete from student where id = ?";
 		int r = template.update(query, studentId);
@@ -30,10 +33,16 @@ public class StudentDaoImpl implements StudentDao {
 	public Student getStudent(int studentId) {
 		String query = "select * from student where id = ?";
 		RowMapper<Student> rowMapper = new RowMapperImpl();
-		Student student = template.queryForObject(query,rowMapper, studentId);
+		Student student = template.queryForObject(query, rowMapper, studentId);
 		return student;
 	}
-	
+
+	public List<Student> getAllStudents() {
+		String query = "select * from student";
+		List<Student> list = template.query(query, new RowMapperImpl());
+		return list;
+	}
+
 	public JdbcTemplate getTemplate() {
 		return template;
 	}

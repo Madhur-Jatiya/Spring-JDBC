@@ -1,5 +1,6 @@
 package com.spring.jdbc;
 
+import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
@@ -18,7 +19,6 @@ public class App {
 		Scanner sc = new Scanner(System.in);
 		
 		// insert
-
 //        Student student = new Student();
 //        student.setId(110);
 //        student.setName("Akshu");
@@ -26,21 +26,21 @@ public class App {
 //        int result = studentDao.insert(student);
 
 		// update
-
 //        Student student2 = new Student();
-//        student2.setId(100);
-//        student2.setName("Akshada");
+//        student2.setId(6);
+//        student2.setName("Akash");
 //        int result = studentDao.change(student2);
 
 		// delete
-
 //		System.out.print("Enter id = ");
 //		int id = sc.nextInt();
 //		int result = studentDao.delete(id);
 
-		//get Result
-		Student student = studentDao.getStudent(7);
+		//get student with id
+//		Student student = studentDao.getStudent(7);
 		
-		System.out.println(student);
+//		get all students 
+		List<Student> allStudents = studentDao.getAllStudents();
+		System.out.println(allStudents);
 	}
 }
