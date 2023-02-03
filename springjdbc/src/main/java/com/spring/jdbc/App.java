@@ -17,7 +17,7 @@ public class App {
 		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
 		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
 		Scanner sc = new Scanner(System.in);
-		
+
 		// insert
 //        Student student = new Student();
 //        student.setId(110);
@@ -36,11 +36,13 @@ public class App {
 //		int id = sc.nextInt();
 //		int result = studentDao.delete(id);
 
-		//get student with id
+		// get student with id
 //		Student student = studentDao.getStudent(7);
-		
+
 //		get all students 
 		List<Student> allStudents = studentDao.getAllStudents();
-		System.out.println(allStudents);
+		for (Student student : allStudents) {
+			System.out.println(student);
+		}
 	}
 }
