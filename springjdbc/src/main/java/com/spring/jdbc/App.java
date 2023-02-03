@@ -4,7 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
 
@@ -14,8 +14,10 @@ import com.spring.jdbc.entities.Student;
  */
 public class App {
 	public static void main(String[] args) {
-		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
-		StudentDao studentDao = (StudentDao) context.getBean("studentDao");
+//		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
+		ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
+		
+		StudentDao studentDao = (StudentDao) context.getBean("studentDao", StudentDao.class);
 		Scanner sc = new Scanner(System.in);
 
 		// insert
