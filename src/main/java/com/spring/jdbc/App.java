@@ -8,23 +8,19 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import com.spring.jdbc.dao.StudentDao;
 import com.spring.jdbc.entities.Student;
 
-/**
- * Hello world!
- *
- */
 public class App {
 	public static void main(String[] args) {
 //		ApplicationContext context = new ClassPathXmlApplicationContext("com/spring/jdbc/config.xml");
 		ApplicationContext context = new AnnotationConfigApplicationContext(JdbcConfig.class);
-		
+
 		StudentDao studentDao = (StudentDao) context.getBean("studentDao", StudentDao.class);
 		Scanner sc = new Scanner(System.in);
 
 		// insert
 //        Student student = new Student();
-//        student.setId(110);
-//        student.setName("Akshu");
-//        student.setCity("Sangli");
+//        student.setId(111);
+//        student.setName("Aastha");
+//        student.setCity("Indore");
 //        int result = studentDao.insert(student);
 
 		// update
