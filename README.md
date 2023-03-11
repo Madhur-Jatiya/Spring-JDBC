@@ -1,2 +1,5 @@
 # spring-jdbc
-NucleusTeq training Project
+
+In this repository, you will learn the basics of Spring JDBC connection, creating DAO and entities, and configuring XML files. Spring JDBC is a powerful feature of the Spring framework that provides a simplified approach to working with databases in Java applications. The first step in using Spring JDBC is to create a data source configuration in the XML file. This configuration file contains information such as the database URL, username, and password. Next, we create DAO (Data Access Object) classes that encapsulate the logic for accessing and manipulating data in the database. Finally, we create entity classes that map the database table columns to the class properties. These entities can be used to create, read, update, and delete data in the database using the DAO classes. The Spring JDBC framework also provides features such as exception handling, transaction management, and caching to make it easier to work with databases in Java applications.
+
+![image](https://user-images.githubusercontent.com/70679523/224508814-d1b4de5d-87b5-4b2c-88c5-58e0983bee70.png)
